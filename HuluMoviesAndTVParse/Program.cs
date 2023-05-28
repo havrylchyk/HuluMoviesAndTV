@@ -1,35 +1,36 @@
 ﻿
 using CsvHelper;
 using HuluMoviesAndTVParse.Dtos;
-//using GamesHistory.Core.Context;
-//using GamesHistory.ParserApp.Dtos;
-//using GamesHistory.Core.Entities;
 
-////throw new ArgumentException("---- - - -");
 
 Console.WriteLine($"{DateTime.Now.ToString("HH:mm:ss")} -- APP STARTED --");
 
-//using (var ctx = new GamesContext())
-//{
-//    ctx.Database.EnsureDeleted();
-//    ctx.Database.EnsureCreated();
 
 using (var reader = new StreamReader("HuluTitles.csv"))
 using (var csvReader = new CsvReader(reader, culture: System.Globalization.CultureInfo.CurrentCulture))
 {
-       var records = csvReader.GetRecords<MoviesAndTVShowsReadDto>().ToList();
-    //int row = 0;
-    //foreach (var record in records.Take(3072))
-    //{
-    //    Console.WriteLine($"{++row}: {record}");
-    //}
+     try
+    {
+        var records = csvReader.GetRecords<MoviesAndTVShowsReadDto>().ToList();
+        int row = 0;
+
+        foreach (var record in records.Take(1000))
+        {
+            Console.WriteLine($"{++row}: {record}");
+        }
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"Error parsing CSV: {ex.Message}");
+    }
+
+
     //if (records.Count > 0)
     //{
     //    var firstRecord = records[0];
     //    Console.WriteLine(firstRecord);
     //}
-    var firstRecord = records.FirstOrDefault();
-    Console.WriteLine(firstRecord);
+
 
     //        int row = 0;
 

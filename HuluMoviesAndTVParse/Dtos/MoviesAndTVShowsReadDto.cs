@@ -1,11 +1,9 @@
 ﻿using CsvHelper.Configuration.Attributes;
-using System.Text.Json;
 
 namespace HuluMoviesAndTVParse.Dtos
 {
     public class MoviesAndTVShowsReadDto
-    {
-        //								
+    {							
         [Name("type")]
         public string Type { get; set; }
 
@@ -18,8 +16,9 @@ namespace HuluMoviesAndTVParse.Dtos
         [Name("country")]
         public string? Country { get; set; }
 
+        [Index(4)]
         [Name("release_year")]
-        public string ReleaseYear { get; set; }
+        public int ReleaseYear { get; set; }
 
         [Name("rating")]
         public string? Rating { get; set; }
@@ -36,30 +35,38 @@ namespace HuluMoviesAndTVParse.Dtos
 
         public override string ToString()
         {
-            return $"{Type} | {Title} | {Director} | {Country} | {ReleaseYear} | " +
-                $"{Rating} | {Duration} | {ListedIn} | {Description}";
+            return $"{Type} | {Title} | {Director} | {string.Join("--", CountryParsed)} | {ReleaseYear} | " +
+                $"{Rating} | {Duration} | {string.Join("--", ListedInParsed)} | {Description}";
         }
 
-        //public string[] CountryParsed
-        //{return $"{Type} | {Title} | {Director} | {Country} | {ReleaseYear} | {Rating} | {Duration} | {ListedIn} | {Description}";
-        //    get
-        //    {
-        //        return string.IsNullOrEmpty(Team)
-        //            ? new string[0]
-        //            : JsonSerializer.Deserialize<string[]>(Team.Replace("\'", "\""));
-        //    }
-        //}
+        public string[] CountryParsed
+        {
+            get
+            {
+                if (!string.IsNullOrEmpty(Country))
+                {
+                    return Country.Trim().Split(',').Select(c => c.Trim()).ToArray();
+                }
+                else
+                {
+                    return new string[0]; 
+                }
+            }
+        }
 
-        //public string Genres { get; set; }
-
-        //public string[] GenresParsed
-        //{
-        //    get
-        //    {
-        //        return string.IsNullOrEmpty(Genres)
-        //            ? new string[0]
-        //            : JsonSerializer.Deserialize<string[]>(Genres.Replace("\'", "\""));
-        //    }
-        //}
+        public string[] ListedInParsed
+        {
+            get
+            {
+                if (!string.IsNullOrEmpty(ListedIn))
+                {
+                    return ListedIn.Split(',').Select(c => c.Trim()).ToArray();
+                }
+                else
+                {
+                    return new string[0];
+                }
+            }
+        }
     }
 }
