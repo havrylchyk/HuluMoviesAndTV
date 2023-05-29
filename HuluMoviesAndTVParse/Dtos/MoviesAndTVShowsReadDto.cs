@@ -27,7 +27,7 @@ namespace HuluMoviesAndTVParse.Dtos
         public string? Duration { get; set; }
 
         [Name("listed_in")]
-        public string ListedIn { get; set; }
+        public string? ListedIn { get; set; }
 
         [Name("description")]
         public string Description { get; set; }

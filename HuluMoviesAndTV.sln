@@ -3,19 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33723.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HuluMoviesAndTV.WinApp", "HuluMoviesAndTV.WinApp\HuluMoviesAndTV.WinApp.csproj", "{2F9DAD6F-B07E-4409-8C7F-2A21DBE02E13}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HuluMoviesAndTV.WinApp", "HuluMoviesAndTV.WinApp\HuluMoviesAndTV.WinApp.csproj", "{2F9DAD6F-B07E-4409-8C7F-2A21DBE02E13}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D71AC737-01A3-498A-9405-C0C095691E1B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "helpers", "helpers", "{334E545A-FF11-4FD9-9304-E26E6854C1D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HuluMoviesAndTV.Core", "HuluMoviesAndTV.Core\HuluMoviesAndTV.Core.csproj", "{ABC1AA43-0682-4C10-9D39-3423C3E68E56}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HuluMoviesAndTV.Core", "HuluMoviesAndTV.Core\HuluMoviesAndTV.Core.csproj", "{ABC1AA43-0682-4C10-9D39-3423C3E68E56}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HuluMoviesAndTV.Repositories", "HuluMoviesAndTV.Repositories\HuluMoviesAndTV.Repositories.csproj", "{02E93FC3-5796-46B3-B4AB-3A8CBA107BE1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HuluMoviesAndTV.Repositories", "HuluMoviesAndTV.Repositories\HuluMoviesAndTV.Repositories.csproj", "{02E93FC3-5796-46B3-B4AB-3A8CBA107BE1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HuluMoviesAndTV.ParserApp", "HuluMoviesAndTV.ParserApp\HuluMoviesAndTV.ParserApp.csproj", "{94189196-7187-4D6F-B5E3-BA4443664ACD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HuluMoviesAndTVParse", "HuluMoviesAndTVParse\HuluMoviesAndTVParse.csproj", "{B6D05593-36F3-4E4B-8C4D-3AE38DFACF5A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HuluMoviesAndTVParse", "HuluMoviesAndTVParse\HuluMoviesAndTVParse.csproj", "{B6D05593-36F3-4E4B-8C4D-3AE38DFACF5A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HuluMoviesAndTV.Test", "HuluMoviesAndTV.Test\HuluMoviesAndTV.Test.csproj", "{1715584A-5004-48CC-835A-202559FD89B9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,14 +35,14 @@ Global
 		{02E93FC3-5796-46B3-B4AB-3A8CBA107BE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02E93FC3-5796-46B3-B4AB-3A8CBA107BE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02E93FC3-5796-46B3-B4AB-3A8CBA107BE1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{94189196-7187-4D6F-B5E3-BA4443664ACD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{94189196-7187-4D6F-B5E3-BA4443664ACD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{94189196-7187-4D6F-B5E3-BA4443664ACD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{94189196-7187-4D6F-B5E3-BA4443664ACD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B6D05593-36F3-4E4B-8C4D-3AE38DFACF5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B6D05593-36F3-4E4B-8C4D-3AE38DFACF5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B6D05593-36F3-4E4B-8C4D-3AE38DFACF5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B6D05593-36F3-4E4B-8C4D-3AE38DFACF5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1715584A-5004-48CC-835A-202559FD89B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1715584A-5004-48CC-835A-202559FD89B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1715584A-5004-48CC-835A-202559FD89B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1715584A-5004-48CC-835A-202559FD89B9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -51,8 +51,8 @@ Global
 		{2F9DAD6F-B07E-4409-8C7F-2A21DBE02E13} = {D71AC737-01A3-498A-9405-C0C095691E1B}
 		{ABC1AA43-0682-4C10-9D39-3423C3E68E56} = {D71AC737-01A3-498A-9405-C0C095691E1B}
 		{02E93FC3-5796-46B3-B4AB-3A8CBA107BE1} = {D71AC737-01A3-498A-9405-C0C095691E1B}
-		{94189196-7187-4D6F-B5E3-BA4443664ACD} = {334E545A-FF11-4FD9-9304-E26E6854C1D3}
 		{B6D05593-36F3-4E4B-8C4D-3AE38DFACF5A} = {334E545A-FF11-4FD9-9304-E26E6854C1D3}
+		{1715584A-5004-48CC-835A-202559FD89B9} = {334E545A-FF11-4FD9-9304-E26E6854C1D3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4CFFFE70-1543-423C-98AE-9E14CAE3A558}

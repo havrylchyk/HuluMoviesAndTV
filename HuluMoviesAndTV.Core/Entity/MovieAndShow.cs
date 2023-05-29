@@ -14,9 +14,11 @@
         public Guid? RatingId { get; set; }
         public Rating? Rating { get; set; }
 
+        //public Guid? CountryId { get; set; }
         public ICollection<Country>? Country { get; set; }
 
-        public ICollection<Listened> Listened { get; set; }
+        //public Guid? ListenedId { get; set; }
+        public ICollection<Listened>? Listened { get; set; }
 
         public string Title { get; set; }
 
