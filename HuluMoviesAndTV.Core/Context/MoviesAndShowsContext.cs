@@ -18,7 +18,14 @@ namespace HuluMoviesAndTV.Core.Context
         public DbSet<Rating> Ratings => Set<Rating>();
         public DbSet<ReleaseYear> ReleaseYears => Set<ReleaseYear>();
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<ProgramType>().HasData(
+                new ProgramType { Name = "Movie"},
+                new ProgramType { Name  = "TV Show"}
+                );
 
+        }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(@"Server=.;Database=HuluDb;Trusted_Connection=True;TrustServerCertificate=True;");

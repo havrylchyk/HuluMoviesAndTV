@@ -15,4 +15,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\HuluMoviesAndTV.Core\HuluMoviesAndTV.Core.csproj" />
+  </ItemGroup>
+
 </Project>

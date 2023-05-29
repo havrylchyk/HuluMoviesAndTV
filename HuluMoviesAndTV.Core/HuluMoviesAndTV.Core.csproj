@@ -19,4 +19,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\HuluMoviesAndTV.ParserApp\HuluMoviesAndTV.ParserApp.csproj" />
+  </ItemGroup>
+
 </Project>
