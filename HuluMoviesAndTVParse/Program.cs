@@ -14,7 +14,7 @@ using (var csvReader = new CsvReader(reader, culture: System.Globalization.Cultu
         var records = csvReader.GetRecords<MoviesAndTVShowsReadDto>().ToList();
         int row = 0;
 
-        foreach (var record in records.Take(1000))
+        foreach (var record in records)
         {
             Console.WriteLine($"{++row}: {record}");
         }

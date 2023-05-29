@@ -45,7 +45,7 @@ namespace HuluMoviesAndTVParse.Dtos
             {
                 if (!string.IsNullOrEmpty(Country))
                 {
-                    return Country.Trim().Split(',').Select(c => c.Trim()).ToArray();
+                    return Country.Split(',').Select(c => c.Trim()).ToArray();
                 }
                 else
                 {
