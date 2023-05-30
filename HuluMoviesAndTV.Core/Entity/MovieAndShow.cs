@@ -2,6 +2,12 @@
 {
     public class MovieAndShow : BaseEntity
     {
+        public string Title { get; set; }
+
+        public string Duration { get; set; }
+
+        public string Description { get; set; }
+
         public Guid TypeId { get; set; }
         public ProgramType Type { get; set; }
 
@@ -14,16 +20,8 @@
         public Guid? RatingId { get; set; }
         public Rating? Rating { get; set; }
 
-        //public Guid? CountryId { get; set; }
         public ICollection<Country>? Country { get; set; }
 
-        //public Guid? ListenedId { get; set; }
         public ICollection<Listened>? Listened { get; set; }
-
-        public string Title { get; set; }
-
-        public string Duration { get; set; }
-
-        public string Description { get; set; }
     }
 }

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HuluMoviesAndTV.Core.Migrations
 {
     [DbContext(typeof(MoviesAndShowsContext))]
-    [Migration("20230529010553_first")]
-    partial class first
+    [Migration("20230530123540_Init")]
+    partial class Init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -141,18 +141,6 @@ namespace HuluMoviesAndTV.Core.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("ProgramTypes");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("4fb52af8-ccf3-4e8a-97aa-02ba41faa959"),
-                            Name = "Movie"
-                        },
-                        new
-                        {
-                            Id = new Guid("4c22297f-bbba-466a-aa6f-d15233d4c2dd"),
-                            Name = "TV Show"
-                        });
                 });
 
             modelBuilder.Entity("HuluMoviesAndTV.Core.Entity.Rating", b =>
@@ -176,8 +164,8 @@ namespace HuluMoviesAndTV.Core.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime>("Year")
-                        .HasColumnType("datetime2");
+                    b.Property<int>("Year")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 

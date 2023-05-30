@@ -3,7 +3,7 @@ using HuluMoviesAndTV.Core.Context;
 using HuluMoviesAndTV.Core.Entity;
 using HuluMoviesAndTVParse.Dtos;
 
-//throw new ArgumentException("---- - - -");
+throw new ArgumentException("---- - - -");
 
 Console.WriteLine($"{DateTime.Now.ToString("HH:mm:ss")} -- APP STARTED --");
 
