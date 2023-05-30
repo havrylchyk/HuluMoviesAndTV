@@ -19,4 +19,10 @@
     <ProjectReference Include="..\HuluMoviesAndTV.Core\HuluMoviesAndTV.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="HuluTitles.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

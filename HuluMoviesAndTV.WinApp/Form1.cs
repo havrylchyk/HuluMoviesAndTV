@@ -1,7 +1,6 @@
 using HuluMoviesAndTV.Core.Context;
 using HuluMoviesAndTV.Core.Entity;
 using HuluMoviesAndTV.Repositories;
-using System.IO;
 
 namespace HuluMoviesAndTV.WinApp
 {
@@ -9,18 +8,24 @@ namespace HuluMoviesAndTV.WinApp
     {
         private Repository<ProgramType, Guid> programTypeRepository;
         private Repository<Director, Guid> directorRepository;
+        private Repository<Rating, Guid> ratingRepository;
+        private Repository<ReleaseYear, Guid> releaseYearRepository;
 
         public Form1()
         {
             InitializeComponent();
             programTypeRepository = new Repository<ProgramType, Guid>(new MoviesAndShowsContext());
             directorRepository = new Repository<Director, Guid>(new MoviesAndShowsContext());
+            ratingRepository = new Repository<Rating, Guid>(new MoviesAndShowsContext());
+            releaseYearRepository = new Repository<ReleaseYear, Guid>(new MoviesAndShowsContext());
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             LoadProgramTypes();
             LoadProgramDirectors();
+            LoadRating();
+            LoadReleaseYear();
         }
         //Заповнення даних//
         private void LoadProgramTypes()
@@ -95,7 +100,7 @@ namespace HuluMoviesAndTV.WinApp
                 LoadProgramTypes();
             }
         }
-        private void UpdateTypebutton_Click(object sender, EventArgs e)
+        private void UpdateTypebutton_Click_1(object sender, EventArgs e)
         {
             if (TypedataGridView.SelectedRows.Count > 0)
             {
@@ -165,4 +170,3 @@ namespace HuluMoviesAndTV.WinApp
         }
     }
 }
-

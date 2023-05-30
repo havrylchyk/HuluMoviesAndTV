@@ -49,6 +49,31 @@
             label2 = new Label();
             label1 = new Label();
             tabPage2 = new TabPage();
+            groupBoxReleaseYear = new GroupBox();
+            label13 = new Label();
+            UpdateReleaseYearbutton = new Button();
+            DeleteReleaseYearbutton = new Button();
+            AddReleaseYearbutton = new Button();
+            label14 = new Label();
+            ReleaseYeartextBox = new TextBox();
+            groupBox1 = new GroupBox();
+            groupBoxRating = new GroupBox();
+            label11 = new Label();
+            UpdataRatingbutton = new Button();
+            DeleteRatingbutton = new Button();
+            AddRatingbutton = new Button();
+            label12 = new Label();
+            RatingtextBox = new TextBox();
+            label9 = new Label();
+            button1 = new Button();
+            button2 = new Button();
+            button3 = new Button();
+            label10 = new Label();
+            textBox1 = new TextBox();
+            ReleaseYeardataGridView = new DataGridView();
+            RatingdataGridView = new DataGridView();
+            label7 = new Label();
+            label8 = new Label();
             tabPage1 = new TabPage();
             tabPage3 = new TabPage();
             HulutabControl.SuspendLayout();
@@ -57,6 +82,12 @@
             TypegroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)DirectordataGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)TypedataGridView).BeginInit();
+            tabPage2.SuspendLayout();
+            groupBoxReleaseYear.SuspendLayout();
+            groupBox1.SuspendLayout();
+            groupBoxRating.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)ReleaseYeardataGridView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)RatingdataGridView).BeginInit();
             SuspendLayout();
             // 
             // HulutabControl
@@ -196,7 +227,7 @@
             UpdateTypebutton.TabIndex = 4;
             UpdateTypebutton.Text = "Updata";
             UpdateTypebutton.UseVisualStyleBackColor = false;
-            UpdateTypebutton.Click += UpdateTypebutton_Click;
+            UpdateTypebutton.Click += UpdateTypebutton_Click_1;
             // 
             // DeleteTypebutton
             // 
@@ -281,13 +312,282 @@
             // 
             // tabPage2
             // 
+            tabPage2.Controls.Add(groupBoxReleaseYear);
+            tabPage2.Controls.Add(groupBox1);
+            tabPage2.Controls.Add(ReleaseYeardataGridView);
+            tabPage2.Controls.Add(RatingdataGridView);
+            tabPage2.Controls.Add(label7);
+            tabPage2.Controls.Add(label8);
             tabPage2.Location = new Point(4, 29);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
             tabPage2.Size = new Size(1348, 606);
             tabPage2.TabIndex = 1;
-            tabPage2.Text = "tabPage2";
+            tabPage2.Text = "Rating and ReleaseYear";
             tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // groupBoxReleaseYear
+            // 
+            groupBoxReleaseYear.Controls.Add(label13);
+            groupBoxReleaseYear.Controls.Add(UpdateReleaseYearbutton);
+            groupBoxReleaseYear.Controls.Add(DeleteReleaseYearbutton);
+            groupBoxReleaseYear.Controls.Add(AddReleaseYearbutton);
+            groupBoxReleaseYear.Controls.Add(label14);
+            groupBoxReleaseYear.Controls.Add(ReleaseYeartextBox);
+            groupBoxReleaseYear.Location = new Point(488, 291);
+            groupBoxReleaseYear.Name = "groupBoxReleaseYear";
+            groupBoxReleaseYear.Size = new Size(420, 292);
+            groupBoxReleaseYear.TabIndex = 9;
+            groupBoxReleaseYear.TabStop = false;
+            groupBoxReleaseYear.Text = "Working with Release Year";
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.ForeColor = Color.Red;
+            label13.Location = new Point(20, 222);
+            label13.Name = "label13";
+            label13.Size = new Size(155, 20);
+            label13.TabIndex = 5;
+            label13.Text = "*choose row fo delete";
+            // 
+            // UpdateReleaseYearbutton
+            // 
+            UpdateReleaseYearbutton.BackColor = Color.Tomato;
+            UpdateReleaseYearbutton.Location = new Point(118, 103);
+            UpdateReleaseYearbutton.Name = "UpdateReleaseYearbutton";
+            UpdateReleaseYearbutton.Size = new Size(134, 29);
+            UpdateReleaseYearbutton.TabIndex = 4;
+            UpdateReleaseYearbutton.Text = "Updata";
+            UpdateReleaseYearbutton.UseVisualStyleBackColor = false;
+            UpdateReleaseYearbutton.Click += UpdataReleaseYearbutton_Click;
+            // 
+            // DeleteReleaseYearbutton
+            // 
+            DeleteReleaseYearbutton.BackColor = Color.Tomato;
+            DeleteReleaseYearbutton.Location = new Point(18, 244);
+            DeleteReleaseYearbutton.Name = "DeleteReleaseYearbutton";
+            DeleteReleaseYearbutton.Size = new Size(94, 29);
+            DeleteReleaseYearbutton.TabIndex = 3;
+            DeleteReleaseYearbutton.Text = "Delete";
+            DeleteReleaseYearbutton.UseVisualStyleBackColor = false;
+            DeleteReleaseYearbutton.Click += this.DeleteReleaseYearbutton_Click;
+            // 
+            // AddReleaseYearbutton
+            // 
+            AddReleaseYearbutton.BackColor = Color.Tomato;
+            AddReleaseYearbutton.Location = new Point(18, 103);
+            AddReleaseYearbutton.Name = "AddReleaseYearbutton";
+            AddReleaseYearbutton.Size = new Size(94, 29);
+            AddReleaseYearbutton.TabIndex = 2;
+            AddReleaseYearbutton.Text = "Add";
+            AddReleaseYearbutton.UseVisualStyleBackColor = false;
+            AddReleaseYearbutton.Click += AddReleaseYearbutton_Click;
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Location = new Point(18, 36);
+            label14.Name = "label14";
+            label14.Size = new Size(49, 20);
+            label14.TabIndex = 1;
+            label14.Text = "Name";
+            // 
+            // ReleaseYeartextBox
+            // 
+            ReleaseYeartextBox.Location = new Point(18, 70);
+            ReleaseYeartextBox.Name = "ReleaseYeartextBox";
+            ReleaseYeartextBox.Size = new Size(234, 27);
+            ReleaseYeartextBox.TabIndex = 0;
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(groupBoxRating);
+            groupBox1.Controls.Add(label9);
+            groupBox1.Controls.Add(button1);
+            groupBox1.Controls.Add(button2);
+            groupBox1.Controls.Add(button3);
+            groupBox1.Controls.Add(label10);
+            groupBox1.Controls.Add(textBox1);
+            groupBox1.Location = new Point(8, 291);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(413, 292);
+            groupBox1.TabIndex = 8;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Working with Rating";
+            // 
+            // groupBoxRating
+            // 
+            groupBoxRating.Controls.Add(label11);
+            groupBoxRating.Controls.Add(UpdataRatingbutton);
+            groupBoxRating.Controls.Add(DeleteRatingbutton);
+            groupBoxRating.Controls.Add(AddRatingbutton);
+            groupBoxRating.Controls.Add(label12);
+            groupBoxRating.Controls.Add(RatingtextBox);
+            groupBoxRating.Location = new Point(0, 0);
+            groupBoxRating.Name = "groupBoxRating";
+            groupBoxRating.Size = new Size(443, 292);
+            groupBoxRating.TabIndex = 8;
+            groupBoxRating.TabStop = false;
+            groupBoxRating.Text = "Working with Rating";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.ForeColor = Color.Red;
+            label11.Location = new Point(20, 222);
+            label11.Name = "label11";
+            label11.Size = new Size(155, 20);
+            label11.TabIndex = 5;
+            label11.Text = "*choose row fo delete";
+            // 
+            // UpdataRatingbutton
+            // 
+            UpdataRatingbutton.BackColor = Color.LimeGreen;
+            UpdataRatingbutton.Location = new Point(118, 103);
+            UpdataRatingbutton.Name = "UpdataRatingbutton";
+            UpdataRatingbutton.Size = new Size(134, 29);
+            UpdataRatingbutton.TabIndex = 4;
+            UpdataRatingbutton.Text = "Updata";
+            UpdataRatingbutton.UseVisualStyleBackColor = false;
+            UpdataRatingbutton.Click += UpdataRatingbutton_Click;
+            // 
+            // DeleteRatingbutton
+            // 
+            DeleteRatingbutton.BackColor = Color.LimeGreen;
+            DeleteRatingbutton.Location = new Point(18, 244);
+            DeleteRatingbutton.Name = "DeleteRatingbutton";
+            DeleteRatingbutton.Size = new Size(94, 29);
+            DeleteRatingbutton.TabIndex = 3;
+            DeleteRatingbutton.Text = "Delete";
+            DeleteRatingbutton.UseVisualStyleBackColor = false;
+            DeleteRatingbutton.Click += DeleteRatingbutton_Click;
+            // 
+            // AddRatingbutton
+            // 
+            AddRatingbutton.BackColor = Color.LimeGreen;
+            AddRatingbutton.Location = new Point(18, 103);
+            AddRatingbutton.Name = "AddRatingbutton";
+            AddRatingbutton.Size = new Size(94, 29);
+            AddRatingbutton.TabIndex = 2;
+            AddRatingbutton.Text = "Add";
+            AddRatingbutton.UseVisualStyleBackColor = false;
+            AddRatingbutton.Click += AddRatingbutton_Click;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new Point(18, 36);
+            label12.Name = "label12";
+            label12.Size = new Size(49, 20);
+            label12.TabIndex = 1;
+            label12.Text = "Name";
+            // 
+            // RatingtextBox
+            // 
+            RatingtextBox.Location = new Point(18, 70);
+            RatingtextBox.Name = "RatingtextBox";
+            RatingtextBox.Size = new Size(234, 27);
+            RatingtextBox.TabIndex = 0;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.ForeColor = Color.Red;
+            label9.Location = new Point(20, 222);
+            label9.Name = "label9";
+            label9.Size = new Size(155, 20);
+            label9.TabIndex = 5;
+            label9.Text = "*choose row fo delete";
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.LimeGreen;
+            button1.Location = new Point(118, 103);
+            button1.Name = "button1";
+            button1.Size = new Size(134, 29);
+            button1.TabIndex = 4;
+            button1.Text = "Updata";
+            button1.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.LimeGreen;
+            button2.Location = new Point(18, 244);
+            button2.Name = "button2";
+            button2.Size = new Size(94, 29);
+            button2.TabIndex = 3;
+            button2.Text = "Delete";
+            button2.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            button3.BackColor = Color.LimeGreen;
+            button3.Location = new Point(18, 103);
+            button3.Name = "button3";
+            button3.Size = new Size(94, 29);
+            button3.TabIndex = 2;
+            button3.Text = "Add";
+            button3.UseVisualStyleBackColor = false;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(18, 36);
+            label10.Name = "label10";
+            label10.Size = new Size(49, 20);
+            label10.TabIndex = 1;
+            label10.Text = "Name";
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(18, 70);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(234, 27);
+            textBox1.TabIndex = 0;
+            // 
+            // ReleaseYeardataGridView
+            // 
+            ReleaseYeardataGridView.BackgroundColor = Color.Tomato;
+            ReleaseYeardataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            ReleaseYeardataGridView.Location = new Point(488, 36);
+            ReleaseYeardataGridView.Name = "ReleaseYeardataGridView";
+            ReleaseYeardataGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            ReleaseYeardataGridView.RowTemplate.Height = 29;
+            ReleaseYeardataGridView.Size = new Size(425, 249);
+            ReleaseYeardataGridView.TabIndex = 7;
+            // 
+            // RatingdataGridView
+            // 
+            RatingdataGridView.BackgroundColor = Color.LimeGreen;
+            RatingdataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            RatingdataGridView.GridColor = SystemColors.MenuText;
+            RatingdataGridView.Location = new Point(8, 36);
+            RatingdataGridView.Name = "RatingdataGridView";
+            RatingdataGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            RatingdataGridView.RowTemplate.Height = 29;
+            RatingdataGridView.Size = new Size(443, 249);
+            RatingdataGridView.TabIndex = 6;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Lucida Sans Typewriter", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label7.Location = new Point(488, 10);
+            label7.Name = "label7";
+            label7.Size = new Size(154, 23);
+            label7.TabIndex = 5;
+            label7.Text = "Release Year";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Lucida Sans Typewriter", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.Location = new Point(8, 10);
+            label8.Name = "label8";
+            label8.Size = new Size(82, 23);
+            label8.TabIndex = 4;
+            label8.Text = "Rating";
             // 
             // tabPage1
             // 
@@ -327,6 +627,16 @@
             TypegroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)DirectordataGridView).EndInit();
             ((System.ComponentModel.ISupportInitialize)TypedataGridView).EndInit();
+            tabPage2.ResumeLayout(false);
+            tabPage2.PerformLayout();
+            groupBoxReleaseYear.ResumeLayout(false);
+            groupBoxReleaseYear.PerformLayout();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            groupBoxRating.ResumeLayout(false);
+            groupBoxRating.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)ReleaseYeardataGridView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)RatingdataGridView).EndInit();
             ResumeLayout(false);
         }
 
@@ -355,5 +665,30 @@
         private TextBox DirectortextBox;
         private TabPage tabPage1;
         private TabPage tabPage3;
+        private DataGridView ReleaseYeardataGridView;
+        private DataGridView RatingdataGridView;
+        private Label label7;
+        private Label label8;
+        private GroupBox groupBoxReleaseYear;
+        private Label label13;
+        private Button UpdateReleaseYearbutton;
+        private Button DeleteReleaseYearbutton;
+        private Button AddReleaseYearbutton;
+        private Label label14;
+        private TextBox ReleaseYeartextBox;
+        private GroupBox groupBox1;
+        private GroupBox groupBoxRating;
+        private Label label11;
+        private Button UpdataRatingbutton;
+        private Button DeleteRatingbutton;
+        private Button AddRatingbutton;
+        private Label label12;
+        private TextBox RatingtextBox;
+        private Label label9;
+        private Button button1;
+        private Button button2;
+        private Button button3;
+        private Label label10;
+        private TextBox textBox1;
     }
 }
