@@ -10,6 +10,6 @@ namespace HuluMoviesAndTV.Core.Entity
     {
         public string Name { get; set; }
 
-        public ICollection<MovieAndShow>? MovieAndShows { get; set; }
+        public virtual ICollection<MovieAndShow>? MovieAndShows { get; set; }
     }
 }

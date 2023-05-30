@@ -9,19 +9,19 @@
         public string Description { get; set; }
 
         public Guid TypeId { get; set; }
-        public ProgramType Type { get; set; }
+        public virtual ProgramType Type { get; set; }
 
         public Guid YearId { get; set; }
-        public ReleaseYear Year { get; set; }
+        public virtual ReleaseYear Year { get; set; }
 
         public Guid? DirectorId { get; set; }
-        public Director? Director { get; set; }
+        public virtual Director? Director { get; set; }
 
         public Guid? RatingId { get; set; }
-        public Rating? Rating { get; set; }
+        public virtual Rating? Rating { get; set; }
 
-        public ICollection<Country>? Country { get; set; }
+        public virtual ICollection<Country>? Country { get; set; }
 
-        public ICollection<Listened>? Listened { get; set; }
+        public virtual ICollection<Listened>? Listened { get; set; }
     }
 }

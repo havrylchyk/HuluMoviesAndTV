@@ -310,7 +310,7 @@
             TypedataGridView.Name = "TypedataGridView";
             TypedataGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             TypedataGridView.RowTemplate.Height = 29;
-            TypedataGridView.Size = new Size(413, 249);
+            TypedataGridView.Size = new Size(416, 249);
             TypedataGridView.TabIndex = 2;
             // 
             // label2
@@ -359,7 +359,7 @@
             groupBoxReleaseYear.Controls.Add(ReleaseYeartextBox);
             groupBoxReleaseYear.Location = new Point(488, 291);
             groupBoxReleaseYear.Name = "groupBoxReleaseYear";
-            groupBoxReleaseYear.Size = new Size(420, 292);
+            groupBoxReleaseYear.Size = new Size(428, 292);
             groupBoxReleaseYear.TabIndex = 9;
             groupBoxReleaseYear.TabStop = false;
             groupBoxReleaseYear.Text = "Working with Release Year";
@@ -577,7 +577,7 @@
             ReleaseYeardataGridView.Name = "ReleaseYeardataGridView";
             ReleaseYeardataGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             ReleaseYeardataGridView.RowTemplate.Height = 29;
-            ReleaseYeardataGridView.Size = new Size(425, 249);
+            ReleaseYeardataGridView.Size = new Size(428, 249);
             ReleaseYeardataGridView.TabIndex = 7;
             // 
             // RatingdataGridView
@@ -589,7 +589,7 @@
             RatingdataGridView.Name = "RatingdataGridView";
             RatingdataGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             RatingdataGridView.RowTemplate.Height = 29;
-            RatingdataGridView.Size = new Size(443, 249);
+            RatingdataGridView.Size = new Size(452, 249);
             RatingdataGridView.TabIndex = 6;
             // 
             // label7
@@ -675,7 +675,7 @@
             DeleteListenedbutton.TabIndex = 3;
             DeleteListenedbutton.Text = "Delete";
             DeleteListenedbutton.UseVisualStyleBackColor = false;
-            DeleteListenedbutton.Click += this.DeleteListenedbutton_Click;
+            DeleteListenedbutton.Click += DeleteListenedbutton_Click;
             // 
             // AddListenedbutton
             // 

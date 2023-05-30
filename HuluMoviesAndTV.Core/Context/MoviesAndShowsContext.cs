@@ -16,6 +16,7 @@ namespace HuluMoviesAndTV.Core.Context
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(@"Server=.;Database=HuluDb;Trusted_Connection=True;TrustServerCertificate=True;");
+            optionsBuilder.UseLazyLoadingProxies();
             base.OnConfiguring(optionsBuilder);
         }
 
