@@ -10,6 +10,8 @@ namespace HuluMoviesAndTV.WinApp
         private Repository<Director, Guid> directorRepository;
         private Repository<Rating, Guid> ratingRepository;
         private Repository<ReleaseYear, Guid> releaseYearRepository;
+        private Repository<Country, Guid> countryRepository;
+        private Repository<Listened, Guid> listenedRepository;
 
         public Form1()
         {
@@ -18,6 +20,8 @@ namespace HuluMoviesAndTV.WinApp
             directorRepository = new Repository<Director, Guid>(new MoviesAndShowsContext());
             ratingRepository = new Repository<Rating, Guid>(new MoviesAndShowsContext());
             releaseYearRepository = new Repository<ReleaseYear, Guid>(new MoviesAndShowsContext());
+            countryRepository = new Repository<Country, Guid>(new MoviesAndShowsContext());
+            listenedRepository = new Repository<Listened, Guid>(new MoviesAndShowsContext());
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -26,6 +30,8 @@ namespace HuluMoviesAndTV.WinApp
             LoadProgramDirectors();
             LoadRating();
             LoadReleaseYear();
+            LoadCountry();
+            LoadListened();
         }
         //Заповнення даних//
         private void LoadProgramTypes()
@@ -168,5 +174,7 @@ namespace HuluMoviesAndTV.WinApp
                 DeleteDirector(directorId);
             }
         }
+
+        
     }
 }

@@ -75,6 +75,24 @@
             label7 = new Label();
             label8 = new Label();
             tabPage1 = new TabPage();
+            groupBox2 = new GroupBox();
+            label19 = new Label();
+            UpdateListenedbutton = new Button();
+            DeleteListenedbutton = new Button();
+            AddListenedbutton = new Button();
+            label20 = new Label();
+            ListenedtextBox = new TextBox();
+            CountrygroupBox = new GroupBox();
+            label17 = new Label();
+            UpdateCountrybutton = new Button();
+            DeleteCountrybutton = new Button();
+            AddCountrybutton = new Button();
+            label18 = new Label();
+            CountrytextBox = new TextBox();
+            ListeneddataGridView = new DataGridView();
+            CountriesdataGridView = new DataGridView();
+            label15 = new Label();
+            label16 = new Label();
             tabPage3 = new TabPage();
             HulutabControl.SuspendLayout();
             TypesAndDirectors.SuspendLayout();
@@ -88,6 +106,11 @@
             groupBoxRating.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)ReleaseYeardataGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)RatingdataGridView).BeginInit();
+            tabPage1.SuspendLayout();
+            groupBox2.SuspendLayout();
+            CountrygroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)ListeneddataGridView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)CountriesdataGridView).BeginInit();
             SuspendLayout();
             // 
             // HulutabControl
@@ -371,7 +394,7 @@
             DeleteReleaseYearbutton.TabIndex = 3;
             DeleteReleaseYearbutton.Text = "Delete";
             DeleteReleaseYearbutton.UseVisualStyleBackColor = false;
-            DeleteReleaseYearbutton.Click += this.DeleteReleaseYearbutton_Click;
+            DeleteReleaseYearbutton.Click += DeleteReleaseYearbutton_Click;
             // 
             // AddReleaseYearbutton
             // 
@@ -591,13 +614,213 @@
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(groupBox2);
+            tabPage1.Controls.Add(CountrygroupBox);
+            tabPage1.Controls.Add(ListeneddataGridView);
+            tabPage1.Controls.Add(CountriesdataGridView);
+            tabPage1.Controls.Add(label15);
+            tabPage1.Controls.Add(label16);
             tabPage1.Location = new Point(4, 29);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
             tabPage1.Size = new Size(1348, 606);
             tabPage1.TabIndex = 2;
-            tabPage1.Text = "tabPage1";
+            tabPage1.Text = "County And Listened";
             tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(label19);
+            groupBox2.Controls.Add(UpdateListenedbutton);
+            groupBox2.Controls.Add(DeleteListenedbutton);
+            groupBox2.Controls.Add(AddListenedbutton);
+            groupBox2.Controls.Add(label20);
+            groupBox2.Controls.Add(ListenedtextBox);
+            groupBox2.Location = new Point(617, 292);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(513, 292);
+            groupBox2.TabIndex = 13;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "Working with Listened";
+            // 
+            // label19
+            // 
+            label19.AutoSize = true;
+            label19.ForeColor = Color.Red;
+            label19.Location = new Point(20, 222);
+            label19.Name = "label19";
+            label19.Size = new Size(155, 20);
+            label19.TabIndex = 5;
+            label19.Text = "*choose row fo delete";
+            // 
+            // UpdateListenedbutton
+            // 
+            UpdateListenedbutton.BackColor = Color.Maroon;
+            UpdateListenedbutton.ForeColor = SystemColors.Window;
+            UpdateListenedbutton.Location = new Point(118, 103);
+            UpdateListenedbutton.Name = "UpdateListenedbutton";
+            UpdateListenedbutton.Size = new Size(134, 29);
+            UpdateListenedbutton.TabIndex = 4;
+            UpdateListenedbutton.Text = "Updata";
+            UpdateListenedbutton.UseVisualStyleBackColor = false;
+            UpdateListenedbutton.Click += UpdateListenedbutton_Click;
+            // 
+            // DeleteListenedbutton
+            // 
+            DeleteListenedbutton.BackColor = Color.Maroon;
+            DeleteListenedbutton.ForeColor = SystemColors.Window;
+            DeleteListenedbutton.Location = new Point(18, 244);
+            DeleteListenedbutton.Name = "DeleteListenedbutton";
+            DeleteListenedbutton.Size = new Size(94, 29);
+            DeleteListenedbutton.TabIndex = 3;
+            DeleteListenedbutton.Text = "Delete";
+            DeleteListenedbutton.UseVisualStyleBackColor = false;
+            DeleteListenedbutton.Click += this.DeleteListenedbutton_Click;
+            // 
+            // AddListenedbutton
+            // 
+            AddListenedbutton.BackColor = Color.Maroon;
+            AddListenedbutton.ForeColor = SystemColors.Window;
+            AddListenedbutton.Location = new Point(18, 103);
+            AddListenedbutton.Name = "AddListenedbutton";
+            AddListenedbutton.Size = new Size(94, 29);
+            AddListenedbutton.TabIndex = 2;
+            AddListenedbutton.Text = "Add";
+            AddListenedbutton.UseVisualStyleBackColor = false;
+            AddListenedbutton.Click += AddListenedbutton_Click;
+            // 
+            // label20
+            // 
+            label20.AutoSize = true;
+            label20.Location = new Point(18, 36);
+            label20.Name = "label20";
+            label20.Size = new Size(49, 20);
+            label20.TabIndex = 1;
+            label20.Text = "Name";
+            // 
+            // ListenedtextBox
+            // 
+            ListenedtextBox.Location = new Point(18, 70);
+            ListenedtextBox.Name = "ListenedtextBox";
+            ListenedtextBox.Size = new Size(234, 27);
+            ListenedtextBox.TabIndex = 0;
+            // 
+            // CountrygroupBox
+            // 
+            CountrygroupBox.Controls.Add(label17);
+            CountrygroupBox.Controls.Add(UpdateCountrybutton);
+            CountrygroupBox.Controls.Add(DeleteCountrybutton);
+            CountrygroupBox.Controls.Add(AddCountrybutton);
+            CountrygroupBox.Controls.Add(label18);
+            CountrygroupBox.Controls.Add(CountrytextBox);
+            CountrygroupBox.Location = new Point(8, 292);
+            CountrygroupBox.Name = "CountrygroupBox";
+            CountrygroupBox.Size = new Size(513, 292);
+            CountrygroupBox.TabIndex = 12;
+            CountrygroupBox.TabStop = false;
+            CountrygroupBox.Text = "Working with Country";
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.ForeColor = Color.Red;
+            label17.Location = new Point(20, 222);
+            label17.Name = "label17";
+            label17.Size = new Size(155, 20);
+            label17.TabIndex = 5;
+            label17.Text = "*choose row fo delete";
+            // 
+            // UpdateCountrybutton
+            // 
+            UpdateCountrybutton.BackColor = Color.Violet;
+            UpdateCountrybutton.Location = new Point(118, 103);
+            UpdateCountrybutton.Name = "UpdateCountrybutton";
+            UpdateCountrybutton.Size = new Size(134, 29);
+            UpdateCountrybutton.TabIndex = 4;
+            UpdateCountrybutton.Text = "Updata";
+            UpdateCountrybutton.UseVisualStyleBackColor = false;
+            UpdateCountrybutton.Click += UpdateCountrybutton_Click;
+            // 
+            // DeleteCountrybutton
+            // 
+            DeleteCountrybutton.BackColor = Color.Violet;
+            DeleteCountrybutton.Location = new Point(18, 244);
+            DeleteCountrybutton.Name = "DeleteCountrybutton";
+            DeleteCountrybutton.Size = new Size(94, 29);
+            DeleteCountrybutton.TabIndex = 3;
+            DeleteCountrybutton.Text = "Delete";
+            DeleteCountrybutton.UseVisualStyleBackColor = false;
+            DeleteCountrybutton.Click += DeleteCountrybutton_Click;
+            // 
+            // AddCountrybutton
+            // 
+            AddCountrybutton.BackColor = Color.Violet;
+            AddCountrybutton.Location = new Point(18, 103);
+            AddCountrybutton.Name = "AddCountrybutton";
+            AddCountrybutton.Size = new Size(94, 29);
+            AddCountrybutton.TabIndex = 2;
+            AddCountrybutton.Text = "Add";
+            AddCountrybutton.UseVisualStyleBackColor = false;
+            AddCountrybutton.Click += AddCountrybutton_Click;
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.Location = new Point(18, 36);
+            label18.Name = "label18";
+            label18.Size = new Size(49, 20);
+            label18.TabIndex = 1;
+            label18.Text = "Name";
+            // 
+            // CountrytextBox
+            // 
+            CountrytextBox.Location = new Point(18, 70);
+            CountrytextBox.Name = "CountrytextBox";
+            CountrytextBox.Size = new Size(234, 27);
+            CountrytextBox.TabIndex = 0;
+            // 
+            // ListeneddataGridView
+            // 
+            ListeneddataGridView.BackgroundColor = Color.Maroon;
+            ListeneddataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            ListeneddataGridView.Location = new Point(613, 37);
+            ListeneddataGridView.Name = "ListeneddataGridView";
+            ListeneddataGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            ListeneddataGridView.RowTemplate.Height = 29;
+            ListeneddataGridView.Size = new Size(517, 249);
+            ListeneddataGridView.TabIndex = 11;
+            // 
+            // CountriesdataGridView
+            // 
+            CountriesdataGridView.BackgroundColor = Color.Violet;
+            CountriesdataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            CountriesdataGridView.GridColor = SystemColors.MenuText;
+            CountriesdataGridView.Location = new Point(8, 37);
+            CountriesdataGridView.Name = "CountriesdataGridView";
+            CountriesdataGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            CountriesdataGridView.RowTemplate.Height = 29;
+            CountriesdataGridView.Size = new Size(513, 249);
+            CountriesdataGridView.TabIndex = 10;
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Font = new Font("Lucida Sans Typewriter", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label15.Location = new Point(613, 11);
+            label15.Name = "label15";
+            label15.Size = new Size(142, 23);
+            label15.TabIndex = 9;
+            label15.Text = "Listened In";
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Font = new Font("Lucida Sans Typewriter", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label16.Location = new Point(8, 11);
+            label16.Name = "label16";
+            label16.Size = new Size(106, 23);
+            label16.TabIndex = 8;
+            label16.Text = "Counties";
             // 
             // tabPage3
             // 
@@ -637,6 +860,14 @@
             groupBoxRating.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)ReleaseYeardataGridView).EndInit();
             ((System.ComponentModel.ISupportInitialize)RatingdataGridView).EndInit();
+            tabPage1.ResumeLayout(false);
+            tabPage1.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
+            CountrygroupBox.ResumeLayout(false);
+            CountrygroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)ListeneddataGridView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)CountriesdataGridView).EndInit();
             ResumeLayout(false);
         }
 
@@ -690,5 +921,23 @@
         private Button button3;
         private Label label10;
         private TextBox textBox1;
+        private DataGridView ListeneddataGridView;
+        private DataGridView CountriesdataGridView;
+        private Label label15;
+        private Label label16;
+        private GroupBox CountrygroupBox;
+        private Label label17;
+        private Button UpdateCountrybutton;
+        private Button DeleteCountrybutton;
+        private Button AddCountrybutton;
+        private Label label18;
+        private TextBox CountrytextBox;
+        private GroupBox groupBox2;
+        private Label label19;
+        private Button UpdateListenedbutton;
+        private Button DeleteListenedbutton;
+        private Button AddListenedbutton;
+        private Label label20;
+        private TextBox ListenedtextBox;
     }
 }
