@@ -896,9 +896,9 @@
             // 
             // FiltertextBox
             // 
-            FiltertextBox.Location = new Point(1018, 23);
+            FiltertextBox.Location = new Point(970, 49);
             FiltertextBox.Name = "FiltertextBox";
-            FiltertextBox.Size = new Size(125, 27);
+            FiltertextBox.Size = new Size(255, 27);
             FiltertextBox.TabIndex = 26;
             FiltertextBox.TextChanged += FiltertextBox_TextChanged;
             // 
@@ -907,9 +907,9 @@
             label30.AutoSize = true;
             label30.Location = new Point(970, 26);
             label30.Name = "label30";
-            label30.Size = new Size(42, 20);
+            label30.Size = new Size(92, 20);
             label30.TabIndex = 25;
-            label30.Text = "Filter";
+            label30.Text = "Search(Title)";
             // 
             // ListenedComboBox
             // 
