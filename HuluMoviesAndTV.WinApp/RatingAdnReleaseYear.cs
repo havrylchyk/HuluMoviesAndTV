@@ -35,6 +35,7 @@ namespace HuluMoviesAndTV.WinApp
             };
 
             AddRating(rating);
+            LoadRatingComboBox();
         }
 
         private void DeleteRating(Guid ratingId)
@@ -53,6 +54,7 @@ namespace HuluMoviesAndTV.WinApp
             {
                 Guid ratingId = (Guid)RatingdataGridView.SelectedRows[0].Cells["Id"].Value;
                 DeleteRating(ratingId);
+                LoadRatingComboBox();
             }
         }
 
@@ -75,6 +77,7 @@ namespace HuluMoviesAndTV.WinApp
                 string newName = RatingtextBox.Text;
 
                 UpdateRating(ratingId, newName);
+                LoadRatingComboBox();
             }
         }
         ///////////////
@@ -92,6 +95,7 @@ namespace HuluMoviesAndTV.WinApp
             };
 
             AddReleaseYear(releaseYear);
+            LoadReleaseYearComboBox();
         }
         ///////////////
         private void DeleteReleaseYear(Guid programTypeId)
@@ -110,6 +114,7 @@ namespace HuluMoviesAndTV.WinApp
             {
                 Guid programTypeId = (Guid)ReleaseYeardataGridView.SelectedRows[0].Cells["Id"].Value;
                 DeleteReleaseYear(programTypeId);
+                LoadReleaseYearComboBox();
             }
         }
 
@@ -132,6 +137,7 @@ namespace HuluMoviesAndTV.WinApp
                 int newYear = int.Parse(ReleaseYeartextBox.Text);
 
                 UpdateReleaseYear(yearId, newYear);
+                LoadReleaseYearComboBox();
             }
         }
     }

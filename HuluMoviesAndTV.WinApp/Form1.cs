@@ -1,6 +1,7 @@
 using HuluMoviesAndTV.Core.Context;
 using HuluMoviesAndTV.Core.Entity;
 using HuluMoviesAndTV.Repositories;
+using System.Text.RegularExpressions;
 
 namespace HuluMoviesAndTV.WinApp
 {
@@ -12,6 +13,7 @@ namespace HuluMoviesAndTV.WinApp
         private Repository<ReleaseYear, Guid> releaseYearRepository;
         private Repository<Country, Guid> countryRepository;
         private Repository<Listened, Guid> listenedRepository;
+        private Repository<MovieAndShow, Guid> movieAndShowRepository;
 
         public Form1()
         {
@@ -22,6 +24,7 @@ namespace HuluMoviesAndTV.WinApp
             releaseYearRepository = new Repository<ReleaseYear, Guid>(new MoviesAndShowsContext());
             countryRepository = new Repository<Country, Guid>(new MoviesAndShowsContext());
             listenedRepository = new Repository<Listened, Guid>(new MoviesAndShowsContext());
+            movieAndShowRepository = new Repository<MovieAndShow, Guid>(new MoviesAndShowsContext());
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -32,6 +35,14 @@ namespace HuluMoviesAndTV.WinApp
             LoadReleaseYear();
             LoadCountry();
             LoadListened();
+            LoadMovieAndShow();
+            // // // // // // //
+            LoadProgramTypesForComboBox();
+            LoadDirectorComboBox();
+            LoadRatingComboBox();
+            LoadReleaseYearComboBox();
+            LoadCountryComboBox();
+            LoadListenedComboBox();
         }
         //Заповнення даних//
         private void LoadProgramTypes()
@@ -68,12 +79,22 @@ namespace HuluMoviesAndTV.WinApp
         }
         private void AddTypebutton_Click(object sender, EventArgs e)
         {
-            ProgramType newProgramType = new ProgramType
-            {
-                Name = NameOfType.Text
-            };
+            string programTypeName = NameOfType.Text;
 
-            AddProgramType(newProgramType);
+            if (IsValidProgramTypeName(programTypeName))
+            {
+                ProgramType newProgramType = new ProgramType
+                {
+                    Name = programTypeName
+                };
+
+                AddProgramType(newProgramType);
+                LoadProgramTypesForComboBox();
+            }
+            else
+            {
+                MessageBox.Show("Program type name should not be empty.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void DeleteType(Guid programTypeId)
@@ -84,6 +105,7 @@ namespace HuluMoviesAndTV.WinApp
                 programTypeRepository.Delete(programType);
                 programTypeRepository.Save();
                 LoadProgramTypes();
+
             }
         }
         private void DeleteTypebutton_Click(object sender, EventArgs e)
@@ -92,6 +114,7 @@ namespace HuluMoviesAndTV.WinApp
             {
                 Guid programTypeId = (Guid)TypedataGridView.SelectedRows[0].Cells["Id"].Value;
                 DeleteType(programTypeId);
+                LoadProgramTypesForComboBox();
             }
         }
 
@@ -104,6 +127,7 @@ namespace HuluMoviesAndTV.WinApp
                 programTypeRepository.Update(programType);
                 programTypeRepository.Save();
                 LoadProgramTypes();
+
             }
         }
         private void UpdateTypebutton_Click_1(object sender, EventArgs e)
@@ -113,7 +137,15 @@ namespace HuluMoviesAndTV.WinApp
                 Guid programTypeId = (Guid)TypedataGridView.SelectedRows[0].Cells["Id"].Value;
                 string newName = NameOfType.Text;
 
-                UpdateType(programTypeId, newName);
+                if (IsValidProgramTypeName(newName))
+                {
+                    UpdateType(programTypeId, newName);
+                    LoadProgramTypesForComboBox();
+                }
+                else
+                {
+                    MessageBox.Show("Program type name should not be empty.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
         //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
@@ -126,12 +158,22 @@ namespace HuluMoviesAndTV.WinApp
         }
         private void AddDirectorbutton_Click(object sender, EventArgs e)
         {
-            Director director = new Director
-            {
-                Name = DirectortextBox.Text
-            };
+            string directorName = DirectortextBox.Text;
 
-            AddDirector(director);
+            if (IsValidDirectorName(directorName))
+            {
+                Director director = new Director
+                {
+                    Name = directorName
+                };
+
+                AddDirector(director);
+                LoadProgramDirectors();
+            }
+            else
+            {
+                MessageBox.Show("Director name should only contain letters.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void UpdateDirector(Guid directorId, string newName)
@@ -152,7 +194,15 @@ namespace HuluMoviesAndTV.WinApp
                 Guid directorId = (Guid)DirectordataGridView.SelectedRows[0].Cells["Id"].Value;
                 string newName = DirectortextBox.Text;
 
-                UpdateDirector(directorId, newName);
+                if (IsValidDirectorName(newName))
+                {
+                    UpdateDirector(directorId, newName);
+                    LoadProgramDirectors();
+                }
+                else
+                {
+                    MessageBox.Show("Director name should only contain letters.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -172,9 +222,42 @@ namespace HuluMoviesAndTV.WinApp
             {
                 Guid directorId = (Guid)DirectordataGridView.SelectedRows[0].Cells["Id"].Value;
                 DeleteDirector(directorId);
+                LoadProgramDirectors();
+            }
+        }
+        private bool IsValidDirectorName(string name)
+        {
+            return !string.IsNullOrWhiteSpace(name) && Regex.IsMatch(name, @"^[A-Za-z]+$");
+        }
+        private bool IsValidProgramTypeName(string name)
+        {
+            return !string.IsNullOrWhiteSpace(name) && Regex.IsMatch(name, @"^[A-Za-z]+$");
+        }
+
+        private void FilterDataGridView(string keyword)
+        {
+
+            MovieAndShowdataGridView.ClearSelection();
+
+
+            foreach (DataGridViewRow row in MovieAndShowdataGridView.Rows)
+            {
+
+                string title = row.Cells["Title"].Value.ToString();
+
+
+                if (title.Contains(keyword))
+                {
+                    row.Selected = true;
+                    MovieAndShowdataGridView.FirstDisplayedScrollingRowIndex = row.Index;
+                }
             }
         }
 
-
+        private void FiltertextBox_TextChanged(object sender, EventArgs e)
+        {
+            string keyword = FiltertextBox.Text;
+            FilterDataGridView(keyword);
+        }
     }
 }

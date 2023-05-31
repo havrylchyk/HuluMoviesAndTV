@@ -93,7 +93,32 @@
             CountriesdataGridView = new DataGridView();
             label15 = new Label();
             label16 = new Label();
-            tabPage3 = new TabPage();
+            MovieAndShowtabPage = new TabPage();
+            groupBox3 = new GroupBox();
+            FiltertextBox = new TextBox();
+            label30 = new Label();
+            ListenedComboBox = new ComboBox();
+            CountryComboBox = new ComboBox();
+            DeleteMainbutton = new Button();
+            UpdataMainbutton = new Button();
+            AddMainbutton = new Button();
+            DirectorcomboBox = new ComboBox();
+            label27 = new Label();
+            label28 = new Label();
+            label29 = new Label();
+            ReleaseYearcomboBox = new ComboBox();
+            RatingcomboBox = new ComboBox();
+            ProgramTypecomboBox = new ComboBox();
+            label26 = new Label();
+            label25 = new Label();
+            label24 = new Label();
+            DescriptiontextBox = new TextBox();
+            DurationtextBox = new TextBox();
+            TitletextBox = new TextBox();
+            label23 = new Label();
+            label22 = new Label();
+            label21 = new Label();
+            MovieAndShowdataGridView = new DataGridView();
             HulutabControl.SuspendLayout();
             TypesAndDirectors.SuspendLayout();
             groupBoxDirector.SuspendLayout();
@@ -111,6 +136,9 @@
             CountrygroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)ListeneddataGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)CountriesdataGridView).BeginInit();
+            MovieAndShowtabPage.SuspendLayout();
+            groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)MovieAndShowdataGridView).BeginInit();
             SuspendLayout();
             // 
             // HulutabControl
@@ -118,7 +146,7 @@
             HulutabControl.Controls.Add(TypesAndDirectors);
             HulutabControl.Controls.Add(tabPage2);
             HulutabControl.Controls.Add(tabPage1);
-            HulutabControl.Controls.Add(tabPage3);
+            HulutabControl.Controls.Add(MovieAndShowtabPage);
             HulutabControl.Dock = DockStyle.Fill;
             HulutabControl.Location = new Point(0, 0);
             HulutabControl.Name = "HulutabControl";
@@ -822,15 +850,258 @@
             label16.TabIndex = 8;
             label16.Text = "Counties";
             // 
-            // tabPage3
+            // MovieAndShowtabPage
             // 
-            tabPage3.Location = new Point(4, 29);
-            tabPage3.Name = "tabPage3";
-            tabPage3.Padding = new Padding(3);
-            tabPage3.Size = new Size(1348, 606);
-            tabPage3.TabIndex = 3;
-            tabPage3.Text = "tabPage3";
-            tabPage3.UseVisualStyleBackColor = true;
+            MovieAndShowtabPage.Controls.Add(groupBox3);
+            MovieAndShowtabPage.Controls.Add(MovieAndShowdataGridView);
+            MovieAndShowtabPage.Location = new Point(4, 29);
+            MovieAndShowtabPage.Name = "MovieAndShowtabPage";
+            MovieAndShowtabPage.Padding = new Padding(3);
+            MovieAndShowtabPage.Size = new Size(1348, 606);
+            MovieAndShowtabPage.TabIndex = 3;
+            MovieAndShowtabPage.Text = "MovieAndShow";
+            MovieAndShowtabPage.UseVisualStyleBackColor = true;
+            // 
+            // groupBox3
+            // 
+            groupBox3.Controls.Add(FiltertextBox);
+            groupBox3.Controls.Add(label30);
+            groupBox3.Controls.Add(ListenedComboBox);
+            groupBox3.Controls.Add(CountryComboBox);
+            groupBox3.Controls.Add(DeleteMainbutton);
+            groupBox3.Controls.Add(UpdataMainbutton);
+            groupBox3.Controls.Add(AddMainbutton);
+            groupBox3.Controls.Add(DirectorcomboBox);
+            groupBox3.Controls.Add(label27);
+            groupBox3.Controls.Add(label28);
+            groupBox3.Controls.Add(label29);
+            groupBox3.Controls.Add(ReleaseYearcomboBox);
+            groupBox3.Controls.Add(RatingcomboBox);
+            groupBox3.Controls.Add(ProgramTypecomboBox);
+            groupBox3.Controls.Add(label26);
+            groupBox3.Controls.Add(label25);
+            groupBox3.Controls.Add(label24);
+            groupBox3.Controls.Add(DescriptiontextBox);
+            groupBox3.Controls.Add(DurationtextBox);
+            groupBox3.Controls.Add(TitletextBox);
+            groupBox3.Controls.Add(label23);
+            groupBox3.Controls.Add(label22);
+            groupBox3.Controls.Add(label21);
+            groupBox3.Location = new Point(9, 401);
+            groupBox3.Name = "groupBox3";
+            groupBox3.Size = new Size(1331, 197);
+            groupBox3.TabIndex = 1;
+            groupBox3.TabStop = false;
+            groupBox3.Text = "Work with Hulu";
+            // 
+            // FiltertextBox
+            // 
+            FiltertextBox.Location = new Point(1018, 23);
+            FiltertextBox.Name = "FiltertextBox";
+            FiltertextBox.Size = new Size(125, 27);
+            FiltertextBox.TabIndex = 26;
+            FiltertextBox.TextChanged += FiltertextBox_TextChanged;
+            // 
+            // label30
+            // 
+            label30.AutoSize = true;
+            label30.Location = new Point(970, 26);
+            label30.Name = "label30";
+            label30.Size = new Size(42, 20);
+            label30.TabIndex = 25;
+            label30.Text = "Filter";
+            // 
+            // ListenedComboBox
+            // 
+            ListenedComboBox.FormattingEnabled = true;
+            ListenedComboBox.Location = new Point(554, 110);
+            ListenedComboBox.Name = "ListenedComboBox";
+            ListenedComboBox.Size = new Size(200, 28);
+            ListenedComboBox.TabIndex = 24;
+            // 
+            // CountryComboBox
+            // 
+            CountryComboBox.FormattingEnabled = true;
+            CountryComboBox.Location = new Point(554, 55);
+            CountryComboBox.Name = "CountryComboBox";
+            CountryComboBox.Size = new Size(200, 28);
+            CountryComboBox.TabIndex = 23;
+            // 
+            // DeleteMainbutton
+            // 
+            DeleteMainbutton.Location = new Point(838, 142);
+            DeleteMainbutton.Name = "DeleteMainbutton";
+            DeleteMainbutton.Size = new Size(94, 29);
+            DeleteMainbutton.TabIndex = 22;
+            DeleteMainbutton.Text = "Delete";
+            DeleteMainbutton.UseVisualStyleBackColor = true;
+            DeleteMainbutton.Click += DeleteMainButton_Click;
+            // 
+            // UpdataMainbutton
+            // 
+            UpdataMainbutton.Location = new Point(838, 107);
+            UpdataMainbutton.Name = "UpdataMainbutton";
+            UpdataMainbutton.Size = new Size(94, 29);
+            UpdataMainbutton.TabIndex = 21;
+            UpdataMainbutton.Text = "Update";
+            UpdataMainbutton.UseVisualStyleBackColor = true;
+            UpdataMainbutton.Click += UpdateMainButton_Click;
+            // 
+            // AddMainbutton
+            // 
+            AddMainbutton.Location = new Point(838, 72);
+            AddMainbutton.Name = "AddMainbutton";
+            AddMainbutton.Size = new Size(94, 29);
+            AddMainbutton.TabIndex = 20;
+            AddMainbutton.Text = "Add";
+            AddMainbutton.UseVisualStyleBackColor = true;
+            AddMainbutton.Click += AddMainbutton_Click_1;
+            // 
+            // DirectorcomboBox
+            // 
+            DirectorcomboBox.FormattingEnabled = true;
+            DirectorcomboBox.Location = new Point(554, 160);
+            DirectorcomboBox.Name = "DirectorcomboBox";
+            DirectorcomboBox.Size = new Size(200, 28);
+            DirectorcomboBox.TabIndex = 16;
+            // 
+            // label27
+            // 
+            label27.AutoSize = true;
+            label27.Location = new Point(550, 86);
+            label27.Name = "label27";
+            label27.Size = new Size(64, 20);
+            label27.TabIndex = 14;
+            label27.Text = "Listened";
+            // 
+            // label28
+            // 
+            label28.AutoSize = true;
+            label28.Location = new Point(550, 139);
+            label28.Name = "label28";
+            label28.Size = new Size(63, 20);
+            label28.TabIndex = 13;
+            label28.Text = "Director";
+            // 
+            // label29
+            // 
+            label29.AutoSize = true;
+            label29.Location = new Point(554, 32);
+            label29.Name = "label29";
+            label29.Size = new Size(60, 20);
+            label29.TabIndex = 12;
+            label29.Text = "Country";
+            // 
+            // ReleaseYearcomboBox
+            // 
+            ReleaseYearcomboBox.FormattingEnabled = true;
+            ReleaseYearcomboBox.Location = new Point(266, 164);
+            ReleaseYearcomboBox.Name = "ReleaseYearcomboBox";
+            ReleaseYearcomboBox.Size = new Size(200, 28);
+            ReleaseYearcomboBox.TabIndex = 11;
+            // 
+            // RatingcomboBox
+            // 
+            RatingcomboBox.FormattingEnabled = true;
+            RatingcomboBox.Location = new Point(266, 109);
+            RatingcomboBox.Name = "RatingcomboBox";
+            RatingcomboBox.Size = new Size(200, 28);
+            RatingcomboBox.TabIndex = 10;
+            // 
+            // ProgramTypecomboBox
+            // 
+            ProgramTypecomboBox.FormattingEnabled = true;
+            ProgramTypecomboBox.Location = new Point(266, 56);
+            ProgramTypecomboBox.Name = "ProgramTypecomboBox";
+            ProgramTypecomboBox.Size = new Size(200, 28);
+            ProgramTypecomboBox.TabIndex = 9;
+            // 
+            // label26
+            // 
+            label26.AutoSize = true;
+            label26.Location = new Point(261, 139);
+            label26.Name = "label26";
+            label26.Size = new Size(92, 20);
+            label26.TabIndex = 8;
+            label26.Text = "Release Year";
+            // 
+            // label25
+            // 
+            label25.AutoSize = true;
+            label25.Location = new Point(261, 86);
+            label25.Name = "label25";
+            label25.Size = new Size(52, 20);
+            label25.TabIndex = 7;
+            label25.Text = "Rating";
+            // 
+            // label24
+            // 
+            label24.AutoSize = true;
+            label24.Location = new Point(266, 33);
+            label24.Name = "label24";
+            label24.Size = new Size(101, 20);
+            label24.TabIndex = 6;
+            label24.Text = "Program Type";
+            // 
+            // DescriptiontextBox
+            // 
+            DescriptiontextBox.Location = new Point(6, 164);
+            DescriptiontextBox.Name = "DescriptiontextBox";
+            DescriptiontextBox.Size = new Size(206, 27);
+            DescriptiontextBox.TabIndex = 5;
+            // 
+            // DurationtextBox
+            // 
+            DurationtextBox.Location = new Point(6, 109);
+            DurationtextBox.Name = "DurationtextBox";
+            DurationtextBox.Size = new Size(206, 27);
+            DurationtextBox.TabIndex = 4;
+            // 
+            // TitletextBox
+            // 
+            TitletextBox.Location = new Point(6, 56);
+            TitletextBox.Name = "TitletextBox";
+            TitletextBox.Size = new Size(206, 27);
+            TitletextBox.TabIndex = 3;
+            // 
+            // label23
+            // 
+            label23.AutoSize = true;
+            label23.Location = new Point(6, 139);
+            label23.Name = "label23";
+            label23.Size = new Size(85, 20);
+            label23.TabIndex = 2;
+            label23.Text = "Description";
+            // 
+            // label22
+            // 
+            label22.AutoSize = true;
+            label22.Location = new Point(6, 86);
+            label22.Name = "label22";
+            label22.Size = new Size(67, 20);
+            label22.TabIndex = 1;
+            label22.Text = "Duration";
+            // 
+            // label21
+            // 
+            label21.AutoSize = true;
+            label21.Location = new Point(6, 33);
+            label21.Name = "label21";
+            label21.Size = new Size(38, 20);
+            label21.TabIndex = 0;
+            label21.Text = "Title";
+            // 
+            // MovieAndShowdataGridView
+            // 
+            MovieAndShowdataGridView.BackgroundColor = Color.FromArgb(128, 128, 255);
+            MovieAndShowdataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            MovieAndShowdataGridView.GridColor = SystemColors.MenuText;
+            MovieAndShowdataGridView.Location = new Point(8, 6);
+            MovieAndShowdataGridView.Name = "MovieAndShowdataGridView";
+            MovieAndShowdataGridView.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            MovieAndShowdataGridView.RowTemplate.Height = 29;
+            MovieAndShowdataGridView.Size = new Size(1334, 383);
+            MovieAndShowdataGridView.TabIndex = 0;
             // 
             // Form1
             // 
@@ -868,6 +1139,10 @@
             CountrygroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)ListeneddataGridView).EndInit();
             ((System.ComponentModel.ISupportInitialize)CountriesdataGridView).EndInit();
+            MovieAndShowtabPage.ResumeLayout(false);
+            groupBox3.ResumeLayout(false);
+            groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)MovieAndShowdataGridView).EndInit();
             ResumeLayout(false);
         }
 
@@ -895,7 +1170,7 @@
         private Label label6;
         private TextBox DirectortextBox;
         private TabPage tabPage1;
-        private TabPage tabPage3;
+        private TabPage MovieAndShowtabPage;
         private DataGridView ReleaseYeardataGridView;
         private DataGridView RatingdataGridView;
         private Label label7;
@@ -939,5 +1214,30 @@
         private Button AddListenedbutton;
         private Label label20;
         private TextBox ListenedtextBox;
+        private DataGridView MovieAndShowdataGridView;
+        private GroupBox groupBox3;
+        private TextBox DescriptiontextBox;
+        private TextBox DurationtextBox;
+        private TextBox TitletextBox;
+        private Label label23;
+        private Label label22;
+        private Label label21;
+        private ComboBox DirectorcomboBox;
+        private Label label27;
+        private Label label28;
+        private Label label29;
+        private ComboBox ReleaseYearcomboBox;
+        private ComboBox RatingcomboBox;
+        private ComboBox ProgramTypecomboBox;
+        private Label label26;
+        private Label label25;
+        private Label label24;
+        private Button DeleteMainbutton;
+        private Button UpdataMainbutton;
+        private Button AddMainbutton;
+        private ComboBox ListenedComboBox;
+        private ComboBox CountryComboBox;
+        private TextBox FiltertextBox;
+        private Label label30;
     }
 }

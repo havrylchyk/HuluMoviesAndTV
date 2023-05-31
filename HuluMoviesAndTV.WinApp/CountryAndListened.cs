@@ -1,9 +1,5 @@
 ﻿using HuluMoviesAndTV.Core.Entity;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
 namespace HuluMoviesAndTV.WinApp
 {
@@ -31,13 +27,24 @@ namespace HuluMoviesAndTV.WinApp
         }
         private void AddCountrybutton_Click(object sender, EventArgs e)
         {
-            Country country = new Country
-            {
-                Name = CountrytextBox.Text
-            };
+            string countryName = CountrytextBox.Text;
 
-            AddCountry(country);
+            if (IsValidText(countryName))
+            {
+                Country country = new Country
+                {
+                    Name = countryName
+                };
+
+                AddCountry(country);
+                LoadCountryComboBox();
+            }
+            else
+            {
+                MessageBox.Show("Country name should only contain letters.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
 
         private void DeleteCountry(Guid countryId)
         {
@@ -55,6 +62,7 @@ namespace HuluMoviesAndTV.WinApp
             {
                 Guid countryId = (Guid)CountriesdataGridView.SelectedRows[0].Cells["Id"].Value;
                 DeleteCountry(countryId);
+                LoadCountryComboBox();
             }
         }
 
@@ -73,10 +81,18 @@ namespace HuluMoviesAndTV.WinApp
         {
             if (CountriesdataGridView.SelectedRows.Count > 0)
             {
-                Guid ratingId = (Guid)CountriesdataGridView.SelectedRows[0].Cells["Id"].Value;
+                Guid countryId = (Guid)CountriesdataGridView.SelectedRows[0].Cells["Id"].Value;
                 string newName = CountrytextBox.Text;
 
-                UpdateCountry(ratingId, newName);
+                if (IsValidText(newName))
+                {
+                    UpdateCountry(countryId, newName);
+                    LoadCountryComboBox();
+                }
+                else
+                {
+                    MessageBox.Show("Country name should only contain letters.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -89,12 +105,22 @@ namespace HuluMoviesAndTV.WinApp
         }
         private void AddListenedbutton_Click(object sender, EventArgs e)
         {
-            Listened listened = new Listened
-            {
-                Name = ListenedtextBox.Text
-            };
+            string listenedName = ListenedtextBox.Text;
 
-            AddListened(listened);
+            if (IsValidText(listenedName))
+            {
+                Listened listened = new Listened
+                {
+                    Name = listenedName
+                };
+
+                AddListened(listened);
+                LoadListenedComboBox();
+            }
+            else
+            {
+                MessageBox.Show("Listened name should only contain letters.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void DeleteListened(Guid listenedId)
@@ -113,6 +139,7 @@ namespace HuluMoviesAndTV.WinApp
             {
                 Guid listenedId = (Guid)ListeneddataGridView.SelectedRows[0].Cells["Id"].Value;
                 DeleteListened(listenedId);
+                LoadListenedComboBox();
             }
         }
 
@@ -134,8 +161,20 @@ namespace HuluMoviesAndTV.WinApp
                 Guid listenedId = (Guid)ListeneddataGridView.SelectedRows[0].Cells["Id"].Value;
                 string newName = ListenedtextBox.Text;
 
-                UpdateListened(listenedId, newName);
+                if (IsValidText(newName))
+                {
+                    UpdateListened(listenedId, newName);
+                    LoadListenedComboBox();
+                }
+                else
+                {
+                    MessageBox.Show("Listened name should only contain letters.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
+        }
+        private bool IsValidText(string text)
+        {
+            return !string.IsNullOrWhiteSpace(text) && Regex.IsMatch(text, @"^[A-Za-z]+$");
         }
     }
 }
